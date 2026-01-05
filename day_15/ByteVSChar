@@ -1,0 +1,18 @@
+
+
+        Byte Stream vs Character Stream (Theory)
+
+| Feature     | Byte Stream   | Character Stream    |
+| ----------- | ------------- | ------------------- |
+| Data type   | Bytes (8-bit) | Characters (16-bit) |
+| Use case    | Binary files  | Text files          |
+| Encoding    | Manual        | Automatic           |
+| Performance | Faster        | Slightly slower     |
+
+
+    Practical Observation Task
+Write same text using:
+FileOutputStream
+FileWriter
+Open files in editor
+Character stream file is more readable

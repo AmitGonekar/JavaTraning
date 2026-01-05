@@ -1,0 +1,24 @@
+
+
+What is File class?
+java.io.File represents file or directory path
+It does NOT read or write data
+Used for:
+    creating files/folders
+    checking existence
+    getting file info (name, size, permissions)
+👉 Think of File as file metadata manager, not data handler.
+
+
+
+-> Important Methods
+
+| Method                     | Purpose           |
+| -------------------------- | ----------------- |
+| `createNewFile()`          | Create file       |
+| `exists()`                 | Check existence   |
+| `mkdir()`                  | Create directory  |
+| `getName()`                | File name         |
+| `getAbsolutePath()`        | Full path         |
+| `length()`                 | File size (bytes) |
+| `canRead()` / `canWrite()` | Permissions       |

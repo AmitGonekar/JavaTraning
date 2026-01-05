@@ -1,0 +1,30 @@
+
+
+-> ClassLoader Subsystem
+   Types of ClassLoaders
+        :- Bootstrap ClassLoader
+            Loads core Java classes (java.lang, java.util)
+            Written in native code
+
+        :- Extension ClassLoader
+            Loads classes from ext directory
+
+        :- Application ClassLoader
+            Loads user-defined classes (your programs)
+
+
+
+-> Parent Delegation Model (Simple Words)
+
+   When JVM needs a class:
+    Application ClassLoader asks Extension
+    Extension asks Bootstrap
+    If parent finds class → load it
+    If not → child loads it
+
+  👉 Prevents duplicate loading and security issues
+
+
+
+
+

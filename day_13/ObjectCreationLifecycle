@@ -1,0 +1,25 @@
+
+
+-> Steps of Object Creation
+    Class loaded
+    Memory allocated in heap
+    Default values assigned
+    Constructor called
+    Object reference returned
+
+-> Where Are Objects Created?
+   👉 Heap Memory
+
+
+-> When is Constructor Called?
+👉 After memory allocation, before reference returned
+
+class Test {
+    Test() {
+        System.out.println("Constructor called");
+    }
+
+    public static void main(String[] args) {
+        Test t = new Test();
+    }
+}

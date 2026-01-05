@@ -1,0 +1,21 @@
+
+
+-> What is Garbage Collection?
+
+    Automatic process of:
+        Finding unused objects
+        Freeing heap memory
+
+-> Minor GC vs Major GC
+    | Minor GC  | Major GC |
+    | --------- | -------- |
+    | Young Gen | Old Gen  |
+    | Fast      | Slow     |
+    | Frequent  | Rare     |
+
+Stop-The-World Event
+    All application threads pause
+    GC runs
+    After GC → threads resume
+
+📌 This is why heavy GC affects performance.

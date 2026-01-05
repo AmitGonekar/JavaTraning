@@ -1,0 +1,17 @@
+
+-> What is Escape Analysis?
+
+JVM checks:
+    Whether object escapes method or thread
+
+-> If Object Does NOT Escape
+   JVM may:
+    Allocate object on stack
+    Remove synchronization
+    Improve performance
+
+    void method() {
+        int x = 10;   // never escapes
+    }
+
+

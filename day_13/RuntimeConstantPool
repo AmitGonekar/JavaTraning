@@ -1,0 +1,23 @@
+
+
+-> What is Runtime Constant Pool?
+    Per-class constant pool
+    Created when class is loaded
+    Stores:
+        Literals
+        Symbolic references
+        Method & field references
+
+
+| String Pool            | Constant Pool            |
+| ---------------------- | ------------------------ |
+| Stores String literals | Stores all constants     |
+| Part of heap           | Part of method area      |
+| Only Strings           | Numbers, methods, fields |
+
+
+-> What is Symbolic Reference?
+    Reference that does not point to memory directly
+
+    Example: java/lang/String
+

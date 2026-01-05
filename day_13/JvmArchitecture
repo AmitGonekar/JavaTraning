@@ -1,0 +1,35 @@
+
+
+->  What is JVM?
+JVM (Java Virtual Machine) is a virtual machine that:
+Runs Java bytecode (.class)
+Makes Java platform independent
+Manages memory, threads, and garbage collection
+
+
+-> Main Components of JVM
+    ClassLoader Subsystem
+    Runtime Data Areas
+        Heap
+        Stack
+        Method Area
+        PC Register
+        Native Method Stack
+    Execution Engine
+    Garbage Collector
+    JNI (Java Native Interface)
+
+
+-> Role of Execution Engine
+Execution Engine:
+Executes bytecode line by line
+Uses:
+Interpreter → Executes bytecode one instruction at a time
+JIT Compiler → Converts bytecode to machine code for speed
+Works with Garbage Collector
+📌 Without Execution Engine, Java code cannot run.
+
+
+
+
+

@@ -1,0 +1,16 @@
+
+
+-> What is Heap Memory?
+    Stores objects
+    Shared among all threads
+    Created at JVM startup
+    Garbage Collected automatically
+
+
+-> Why Heap is Shared Among Threads?
+    Objects need to be accessed by multiple threads
+    Enables inter-thread communication
+    Improves memory efficiency
+
+ 📌 Local variables are thread-safe → stored in stack
+ 📌 Objects are shared → stored in heap

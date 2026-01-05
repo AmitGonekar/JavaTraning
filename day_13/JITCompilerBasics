@@ -1,0 +1,18 @@
+
+-> What is JIT Compiler?
+
+Just-In-Time Compiler
+    Converts bytecode to machine code at runtime
+    Stores optimized code for reuse
+
+Interpreter vs JIT
+    | Interpreter     | JIT                   |
+    | --------------- | --------------------- |
+    | Line by line    | Compiles whole method |
+    | Slow            | Fast                  |
+    | No optimization | Optimized code        |
+
+Why JIT is Important?
+    Improves performance
+    Reduces repeated interpretation
+    Makes Java fast like native languages

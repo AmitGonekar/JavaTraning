@@ -1,0 +1,29 @@
+
+
+-> What is Stack Memory?
+    Stores method calls
+    Thread-specific (each thread has its own stack)
+    Faster than heap
+    No garbage collection
+
+
+
+-> What is a Stack Frame?
+
+   Each method call creates a stack frame containing:
+       Local variables
+       Method parameters
+       Return address
+       Operand stack
+
+
+
+-> Stack vs Heap
+
+| Feature | Stack           | Heap    |
+| ------- | --------------- | ------- |
+| Thread  | Private         | Shared  |
+| Stores  | Local variables | Objects |
+| Speed   | Fast            | Slower  |
+| GC      | No              | Yes     |
+| Size    | Small           | Large   |

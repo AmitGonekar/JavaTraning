@@ -1,0 +1,21 @@
+
+
+-> What is Method Area?
+    Stores class-level data
+    Created once per JVM
+    Shared among threads
+
+
+-> Data Stored in Method Area
+    Class metadata
+    Method bytecode
+    Static variables
+    Runtime Constant Pool
+
+
+Where are Static Variables Stored?
+👉 Method Area
+
+class Demo {
+    static int x = 10;
+}

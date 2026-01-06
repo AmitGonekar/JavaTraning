@@ -1,0 +1,18 @@
+
+
+
+-> Strategy Pattern
+
+Definition
+Strategy allows selecting an algorithm at runtime.
+
+-> Problem with if-else
+    Too many conditions
+    Hard to extend
+    Violates Open-Closed Principle
+
+-> Benefits over if-else
+
+   ✔ Easy to add new strategies
+   ✔ Clean code
+   ✔ Runtime flexibility

@@ -1,0 +1,40 @@
+
+
+-> What are Design Patterns?
+Design Patterns are proven, reusable solutions to common software design problems.
+They are:
+    NOT code
+    NOT frameworks
+    Blueprints / best practices
+
+Example:
+    “How to create only ONE object?” → Singleton
+    “How to create objects without tight coupling?” → Factory
+
+-> Why are Design Patterns used?
+    To solve recurring problems
+    To write clean, maintainable code
+    To follow OOP principles
+    To make code flexible and scalable
+
+-> Advantages of Design Patterns
+   ✔ Reusable solutions
+   ✔ Improves code readability
+   ✔ Reduces tight coupling
+   ✔ Improves maintainability
+   ✔ Interview-friendly (very important)
+
+-> Design Patterns vs Frameworks
+| Design Pattern       | Framework         |
+| -------------------- | ----------------- |
+| Concept / Idea       | Ready-made code   |
+| Language independent | Language specific |
+| You implement it     | You use it        |
+| Example: Singleton   | Example: Spring   |
+
+
+-> Real-Life Example
+        Factory Pattern → Pizza shop deciding which pizza to make
+        Singleton → Government (only one)
+        Observer → YouTube notifications
+        Strategy → Different payment methods

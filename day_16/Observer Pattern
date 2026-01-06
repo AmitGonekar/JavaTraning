@@ -1,0 +1,18 @@
+
+
+-> Definition
+   Observer defines one-to-many dependency where observers get notified automatically.
+
+->  Real-Life Example
+   YouTube subscribers
+   Stock price alerts
+   Notification system
+
+-> Advantages
+   ✔ Loose coupling
+   ✔ Automatic notification
+   ✔ Easy scalability
+
+-> Disadvantages
+   ❌ Unexpected updates
+   ❌ Memory leaks if not unsubscribed

@@ -1,0 +1,33 @@
+
+Spring Modules Overview
+
+Core Spring Modules
+Spring Core
+Spring Context
+Spring Beans
+Spring MVC
+Spring JDBC
+Spring ORM
+Spring AOP
+Spring Security
+
+
+-> Spring Core, Context & Beans
+Core → IoC & DI
+Beans → Bean definition & lifecycle
+Context → ApplicationContext (advanced container)
+
+👉 These three together form the Spring IoC Container
+
+
+Spring MVC Module
+Used for web applications
+Model
+View
+Controller
+
+
+    Spring ORM & JDBC Modules
+Simplifies database access
+Works with Hibernate, JPA, JDBC
+Handles connection, exception translation

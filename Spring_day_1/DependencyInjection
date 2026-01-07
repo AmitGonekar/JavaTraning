@@ -1,0 +1,68 @@
+
+
+-> Dependency Injection (DI)
+
+What is Dependency Injection?
+
+DI means:
+Dependencies are provided from outside, not created inside the class
+
+
+-> Example WITHOUT DI (Bad Practice)
+
+class Car {
+    Engine engine = new Engine(); // tight coupling
+}
+
+
+
+-> Example WITH DI (Good Practice)
+
+class Car {
+    Engine engine;
+
+    Car(Engine engine) {
+        this.engine = engine;
+    }
+}
+
+
+-> Types of DI in Spring
+    Constructor Injection (Recommended)
+
+ @Component
+ class Car {
+     private Engine engine;
+
+     @Autowired
+     public Car(Engine engine) {
+         this.engine = engine;
+     }
+ }
+
+
+-> Setter Injection
+
+@Component
+class Car {
+    private Engine engine;
+
+    @Autowired
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+}
+
+
+-> Field Injection (NOT Recommended)
+@Component
+class Car {
+    @Autowired
+    private Engine engine;
+}
+
+
+-> How DI Improves Loose Coupling
+    Classes depend on interfaces, not implementations
+    Easy to replace implementations
+    Easier unit testing

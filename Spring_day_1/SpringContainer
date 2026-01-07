@@ -1,0 +1,24 @@
+
+
+->What is Spring Container?
+    Spring Container:
+    Creates beans
+   Injects dependencies
+    Manages lifecycle
+
+
+
+-> BeanFactory vs ApplicationContext
+
+| BeanFactory     | ApplicationContext |
+| --------------- | ------------------ |
+| Basic container | Advanced container |
+| Lazy loading    | Eager loading      |
+| Less features   | Events, i18n, AOP  |
+
+
+-> Responsibilities of Spring Container
+Bean creation
+Dependency injection
+Lifecycle management
+Configuration handling

@@ -1,0 +1,31 @@
+
+
+-> Advantages of Spring Framework
+   Key Advantages
+   Loose coupling
+   Lightweight
+   Modular
+   Easy testing
+   Enterprise-ready
+
+ -> How Spring Supports Testability
+ Constructor injection
+ Easy mocking
+ No hard dependencies
+ Works well with JUnit & Mockito
+
+
+ -> Integration Support
+    Spring integrates with:
+    Hibernate / JPA
+    JDBC
+    REST APIs
+    Messaging (Kafka, RabbitMQ)
+    Security frameworks
+
+-> Why Spring Is Popular in Enterprise Apps
+   Scales well
+   Clean architecture
+   Massive ecosystem
+   Spring Boot reduces setup time
+   Industry standard

@@ -1,0 +1,23 @@
+Inversion of Control (IoC)
+
+
+-> What is IoC?
+
+IoC means:
+You don’t create objects — Spring creates and manages them.
+Control of object creation is inverted from developer to container.
+
+
+
+-> How Spring Implements IoC
+   Uses IoC Container
+   Reads configuration (XML / Annotations / Java Config)
+   Creates objects (beans)
+   Injects dependencies
+
+
+-> Benefits of IoC
+Loose coupling
+Easy testing
+Better maintenance
+Clean architecture

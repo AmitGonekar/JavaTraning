@@ -1,0 +1,48 @@
+
+
+-> Introduction to Spring Framework
+
+What is Spring Framework?
+Spring Framework is a lightweight Java framework that helps build enterprise-level applications easily by managing:
+Object creation
+Dependencies
+Configuration
+Cross-cutting concerns (logging, security, transactions)
+
+👉 Core idea: You focus on business logic, Spring handles infrastructure.
+
+
+-> Problems in Traditional Java
+   Too many new keywords
+   Tight coupling between classes
+   Hard to test (dependencies fixed)
+   Heavy configuration (EJB earlier)
+   Boilerplate code
+
+
+-> How Spring Solves Them
+
+| Problem            | Spring Solution      |
+| ------------------ | -------------------- |
+| Tight coupling     | Dependency Injection |
+| Object creation    | IoC Container        |
+| Hard testing       | Mockable beans       |
+| Boilerplate        | Annotations          |
+| Cross-cutting code | AOP                  |
+
+-> Spring vs Traditional Java Development
+| Traditional Java         | Spring                       |
+| ------------------------ | ---------------------------- |
+| Objects created manually | Objects created by container |
+| Tightly coupled          | Loosely coupled              |
+| Hard to test             | Easy unit testing            |
+| Lots of boilerplate      | Minimal code                 |
+| No lifecycle management  | Full lifecycle management    |
+
+
+-> Real-World Use Cases of Spring
+   Banking systems
+   E-commerce applications
+   REST APIs & Microservices
+   Enterprise web applications
+   Cloud-based systems

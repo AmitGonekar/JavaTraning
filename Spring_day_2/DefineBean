@@ -1,0 +1,111 @@
+
+
+--> Create a spring.xml configuration file.
+    <?xml version="1.0" encoding="UTF-8"?>
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    </beans>
+
+
+--> Define a Bean using <bean> Tag
+    <bean id="department" class="com.example.springxml.Department">
+        <property name="deptName" value="IT"/>
+    </bean>
+
+--> Inject Primitive Values using <property>
+    <property name="id" value="101"/>
+    <property name="name" value="Amit"/>
+
+--> Inject Object Dependency using ref
+    <property name="department" ref="department"/>
+
+
+-->Setter-Based Dependency Injection (XML)
+    <bean id="employeeSetter"
+          class="com.example.springxml.Employee"
+          init-method="init"
+          destroy-method="destroy">
+
+        <property name="id" value="101"/>
+        <property name="name" value="Amit"/>
+        <property name="department" ref="department"/>
+
+    </bean>
+
+
+--> Constructor-Based Dependency Injection (XML)
+    <bean id="employeeConstructor"
+          class="com.example.springxml.Employee">
+
+        <constructor-arg value="102"/>
+        <constructor-arg value="Rohit"/>
+        <constructor-arg ref="department"/>
+
+    </bean>
+
+--> Load Spring Container
+    ApplicationContext context =
+            new ClassPathXmlApplicationContext("spring.xml");
+
+
+--> Retrieve Bean & Print Values
+
+    Employee emp =
+        (Employee) context.getBean("employeeSetter");
+
+    emp.display();
+
+Output
+    Employee Bean Initialized
+    101 Amit IT
+
+
+--> Change Bean Scope to Prototype
+    <bean id="employeeSetter"
+          class="com.example.springxml.Employee"
+          scope="prototype">
+
+--> Init & Destroy Methods
+    init-method="init"
+    destroy-method="destroy"
+
+Lifecycle:
+    Bean Created
+    Dependencies Injected
+    init() called
+    Bean Ready
+    destroy() called (only for singleton)
+
+--> Bean Lifecycle Using XML
+    Container starts
+    Bean instantiated
+    Properties injected
+    Init method executed
+    Bean used
+    Destroy method executed
+
+--> Advantages & Disadvantages of XML Configuration
+    Advantages
+        Clear separation of configuration and logic
+        No Spring dependency inside Java code
+        Easy to modify without recompiling
+    Disadvantages
+        Too much XML (verbose)
+        Hard to maintain for large projects
+        No compile-time checking
+        Refactoring becomes difficult
+
+--> XML vs Annotation Configuration
+
+    | Feature          | XML              | Annotation  |
+    | ---------------- | ---------------- | ----------- |
+    | Readability      | ❌ Low            | ✅ High      |
+    | Boilerplate      | ❌ High           | ✅ Low       |
+    | Maintainability  | ❌ Difficult      | ✅ Easy      |
+    | Modern usage     | ❌ Rare           | ✅ Standard  |
+    | Learning purpose | ✅ Very important | ✅ Important |

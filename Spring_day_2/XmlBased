@@ -1,0 +1,29 @@
+
+
+1) --> What is XML-based Configuration in Spring?
+
+XML-based configuration means:
+    We define beans
+    Their dependencies
+    Their lifecycle
+    Their scope
+👉 inside an XML file, instead of writing configuration in Java code or annotations.
+📌 Spring reads this XML file and creates + manages objects for us.
+
+
+
+2) --> Why XML Configuration Was Used Before Annotations?
+
+Before Spring 2.5:
+     Java annotations did not exist
+     No @Component, @Autowired, @Configuration
+
+So developers used:
+    XML files for object creation
+    XML for dependency injection
+    XML for lifecycle control
+
+Advantages at that time:
+    No modification needed in Java classes
+    Configuration separated from business logic
+    Easy to change behavior without recompiling code

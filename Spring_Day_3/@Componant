@@ -1,0 +1,82 @@
+
+
+-> @Component – What & Why?
+
+   @Component tells Spring:
+   “This class is a Spring-managed bean.”
+
+   @Component
+   public class Employee {
+   }
+
+Spring automatically:
+    creates object
+    manages lifecycle
+    injects dependencies
+
+
+ -> @Component vs @Service vs @Repository vs @Controller
+
+    | Annotation  | Used For               |
+    | ----------- | ---------------------- |
+    | @Component  | Generic class          |
+    | @Service    | Business logic layer   |
+    | @Repository | DAO / database layer   |
+    | @Controller | Web layer (Spring MVC) |
+
+Example:-
+    @Service
+    public class EmployeeService {
+    }
+
+
+-> Component Scanning & @ComponentScan
+    Spring must scan packages to find annotated classes.
+
+    @ComponentScan("com.example")
+
+    Without this  Spring won’t detect beans.
+
+
+-> @Autowired – Dependency Injection
+
+   Spring automatically injects required dependency.
+
+   Example:-
+    @Component
+    public class EmployeeService {
+
+        @Autowired
+        private Employee employee;
+    }
+Spring finds Employee bean and injects it.
+
+
+-> @Qualifier & @Primary
+
+    Problem: Multiple Beans
+
+        @Component
+        class Car { }
+
+        @Component
+        class Bike { }
+
+    Solution 1️⃣ @Qualifier
+        @Autowired
+        @Qualifier("bike")
+        private Vehicle vehicle;
+
+    Solution 2️⃣ @Primary
+        @Component
+        @Primary
+        class Car { }
+    Spring picks Car by default.
+
+-> @Value – Inject Primitive Values
+
+    @Value("Manprit")
+    private String name;
+
+    @Value("25")
+    private int age;

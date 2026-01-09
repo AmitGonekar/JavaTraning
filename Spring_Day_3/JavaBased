@@ -1,0 +1,113 @@
+-> Learn Java-based Spring configuration using @Configuration and @Bean.
+
+    What is Java-Based Configuration?
+    Instead of annotations on classes, we define beans manually in Java using:
+    @Configuration
+    @Bean
+  Replaces XML completely.
+
+-> Annotation vs Java-Based Configuration
+
+    | Annotation-Based | Java-Based           |
+    | ---------------- | -------------------- |
+    | @Component       | @Bean                |
+    | Auto scanning    | Manual bean creation |
+    | Less control     | Full control         |
+    | Faster           | More explicit        |
+
+-> @Configuration
+       Marks a class as Spring configuration class.
+      @Configuration
+      public class AppConfig {
+      }
+
+-> @Bean – Define Bean
+    @Bean
+    public Employee employee() {
+        return new Employee();
+    }
+
+-> Inject Dependencies Between @Bean Methods
+    @Bean
+    public EmployeeService employeeService() {
+        return new EmployeeService(employee());
+    }
+Spring ensures same singleton instance is used.
+
+
+
+
+-> Java-Based Configuration Example
+
+    public class Employee {
+        public void show() {
+            System.out.println("Employee Bean");
+        }
+    }
+
+
+    public class EmployeeService {
+
+        private Employee employee;
+
+        public EmployeeService(Employee employee) {
+            this.employee = employee;
+        }
+
+        public void display() {
+            employee.show();
+            System.out.println("Java Config Service");
+        }
+    }
+
+    @Configuration
+    public class AppConfig {
+
+        @Bean
+        public Employee employee() {
+            return new Employee();
+        }
+
+        @Bean
+        public EmployeeService employeeService() {
+            return new EmployeeService(employee());
+        }
+    }
+
+    public class MainApp {
+
+        public static void main(String[] args) {
+            ApplicationContext context =
+                    new AnnotationConfigApplicationContext(AppConfig.class);
+
+            EmployeeService service = context.getBean(EmployeeService.class);
+            service.display();
+        }
+    }
+
+    public class MainApp {
+
+        public static void main(String[] args) {
+            ApplicationContext context =
+                    new AnnotationConfigApplicationContext(AppConfig.class);
+
+            EmployeeService service = context.getBean(EmployeeService.class);
+            service.display();
+        }
+    }
+
+-> When to Prefer Java-Based Configuration?
+
+       ✔ When you need:
+       Full control over beans
+       Third-party class beans
+       Conditional logic
+       Clear configuration separation
+
+-> Final Comparison (INTERVIEW GOLD)
+    | XML           | Annotation | Java          |
+    | ------------- | ---------- | ------------- |
+    | Old           | Most used  | Cleanest      |
+    | Verbose       | Simple     | Powerful      |
+    | Less flexible | Medium     | Most flexible |
+

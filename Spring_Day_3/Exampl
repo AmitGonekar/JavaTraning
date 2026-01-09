@@ -1,0 +1,60 @@
+
+
+    -> Complete Annotation-Based Example
+
+
+    @Component
+    public class Employee {
+
+        public void show() {
+            System.out.println("Employee bean created");
+        }
+    }
+
+
+    @Service
+    public class EmployeeService {
+
+        private Employee employee;
+
+        @Autowired
+        public EmployeeService(Employee employee) {
+            this.employee = employee;
+        }
+
+        public void display() {
+            employee.show();
+            System.out.println("Service layer working");
+        }
+    }
+
+
+    @Configuration
+    @ComponentScan("com.example")
+    public class AppConfig {
+    }
+
+
+    public class MainApp {
+
+        public static void main(String[] args) {
+            ApplicationContext context =
+                    new AnnotationConfigApplicationContext(AppConfig.class);
+
+            EmployeeService service = context.getBean(EmployeeService.class);
+            service.display();
+        }
+    }
+
+-> Advantages & Disadvantages
+   Advantages
+        Less code
+        Easy to maintain
+        Fast development
+        Industry standard
+   Disadvantages
+        Tight coupling with Spring
+        Hard to understand for beginners
+        Scanning large packages may affect startup
+
+

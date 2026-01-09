@@ -1,0 +1,17 @@
+
+
+-> What is Annotation-Based Configuration?
+    In annotation-based configuration, we use annotations in Java classes to tell Spring:
+        which class is a bean
+        how dependencies are injected
+        how components are scanned
+    So no XML file for bean definitions.
+
+-> Why Annotations Are Preferred Over XML?
+
+    | XML Configuration | Annotation Configuration      |
+    | ----------------- | ----------------------------- |
+    | Too verbose       | Clean & readable              |
+    | Separate file     | Configuration stays with code |
+    | Hard to maintain  | Easy to maintain              |
+    | Error-prone       | Compile-time safety           |

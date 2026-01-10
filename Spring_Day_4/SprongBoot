@@ -1,0 +1,82 @@
+
+-> What is Spring Boot?
+
+ Spring Boot is a framework built on top of Spring that simplifies Spring application development.
+   It helps you:
+   Start applications quickly
+   Avoid heavy configuration
+   Focus on business logic, not setup
+
+-> Why Spring Boot was introduced?
+Traditional Spring applications had:
+    Too much XML
+    Manual dependency management
+    External server setup
+    Long project setup time
+
+
+-> Limitations of Traditional Spring Framework
+    | Problem               | Traditional Spring       |
+    | --------------------- | ------------------------ |
+    | Configuration         | Large XML files          |
+    | Dependency Management | Manual version matching  |
+    | Server                | External Tomcat required |
+    | Startup Time          | Slow                     |
+    | Boilerplate Code      | Very high                |
+
+-> Spring Framework vs Spring Boot
+    | Feature          | Spring Framework | Spring Boot   |
+    | ---------------- | ---------------- | ------------- |
+    | Configuration    | XML + Java       | Auto-config   |
+    | Setup Time       | Long             | Very fast     |
+    | Server           | External         | Embedded      |
+    | Dependencies     | Manual           | Starter-based |
+    | Production Ready | Extra setup      | Built-in      |
+
+-> Role of @SpringBootApplication
+    @SpringBootApplication
+    public class DemoApplication {
+        public static void main(String[] args) {
+            SpringApplication.run(DemoApplication.class, args);
+        }
+    }
+
+-> What does it do?
+   It is a combination of 3 annotations:
+    @SpringBootConfiguration
+    @EnableAutoConfiguration
+    @ComponentScan
+
+-> What is Auto-Configuration?
+
+    Auto-configuration means:
+
+    Spring Boot automatically configures beans based on:
+    Classpath dependencies
+    Existing beans
+    Properties
+
+    Example:
+    If spring-boot-starter-web is present
+    → DispatcherServlet + Tomcat auto-configured
+
+-> How Auto-Configuration Works Internally (Simple)
+    Application starts
+    Spring checks @EnableAutoConfiguration
+    Reads spring.factories
+    Matches dependencies
+    Creates beans automatically
+
+-> Starter Dependencies & Their Purpose
+    What are Starters?
+    Starters are dependency bundles.
+    Instead of adding 10 dependencies manually, you add 1 starter.
+
+-> Commonly Used Starters
+    | Starter                        | Use             |
+    | ------------------------------ | --------------- |
+    | `spring-boot-starter-web`      | REST & MVC apps |
+    | `spring-boot-starter-data-jpa` | Database + ORM  |
+    | `spring-boot-starter-security` | Security        |
+
+

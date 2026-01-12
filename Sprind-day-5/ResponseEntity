@@ -1,0 +1,40 @@
+
+
+-> ResponseEntity (Status codes & headers)
+    ResponseEntity gives full control over response.
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
+        UserDTO dto = userService.getUserById(id);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(dto);
+    }
+
+
+->  DTO Pattern (Why not expose Entity)
+   ❌ Problem
+      Entity contains DB structure
+      Security risk
+      Tight coupling
+
+        @Entity
+        public class User {
+            @Id
+            private Long id;
+            private String name;
+            private String password; // ❌ sensitive
+        }
+
+
+-> Path Variables & Query Parameters
+   Path Variable
+
+   Used to identify specific resource
+
+   inside postman -> GET /users/10
+
+   @GetMapping("/{id}")
+   public UserDTO get(@PathVariable Long id) {
+       return userService.getUserById(id);
+   }

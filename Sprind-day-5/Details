@@ -1,0 +1,22 @@
+
+
+-> Controller Layer
+      Handles HTTP requests & responses
+      Talks to the Service layer
+      No business logic here
+
+-> Service Layer
+      Contains business logic
+      Acts as a bridge between Controller & Repository
+
+
+-> Repository Layer
+      Talks to the database
+      Uses Spring Data JPA
+
+
+->  Benefits Of this
+      Clean code
+      Easy testing
+      Easy maintenance
+      Industry standard

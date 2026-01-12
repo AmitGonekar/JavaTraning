@@ -1,0 +1,36 @@
+
+
+
+-> @RestController vs @Controller
+
+@Controller
+    Used for MVC applications
+    Returns HTML / JSP pages
+
+    Example:-
+        @Controller
+        public class PageController {
+
+            @GetMapping("/home")
+            public String home() {
+                return "home"; // view name
+            }
+        }
+
+@RestController
+        Used for REST APIs
+        Returns JSON / XML
+        Combines @Controller + @ResponseBody
+
+        Example:-
+            @RestController
+            public class ApiController {
+
+                @GetMapping("/hello")
+                public String hello() {
+                    return "Hello API";
+                }
+            }
+
+
+-> In REST APIs → Always use @RestController

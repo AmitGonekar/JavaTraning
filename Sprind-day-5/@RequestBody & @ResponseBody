@@ -1,0 +1,31 @@
+
+
+-> @RequestBody & @ResponseBody
+
+    @RequestBody
+        Converts JSON → Java Object
+        Uses Jackson
+
+    ->    json type
+            {
+              "name": "Amit"
+            }
+
+    ->    for java
+            @PostMapping
+            public UserDTO create(@RequestBody UserDTO dto) {
+                return dto;
+            }
+
+
+-> @ResponseBody
+        Converts Java Object → JSON
+        Automatically applied in @RestController
+
+
+    @GetMapping
+    @ResponseBody
+    public UserDTO get() {
+        return new UserDTO(1L, "Amit");
+    }
+

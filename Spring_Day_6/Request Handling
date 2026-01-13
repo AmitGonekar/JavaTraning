@@ -1,0 +1,34 @@
+
+
+-> @RequestBody & JSON → Java
+
+    @PostMapping("/users")
+    public User create(@RequestBody UserDTO dto)
+
+    Reads JSON request body
+    Converts to Java object
+    Uses Jackson
+
+-> Role of Jackson
+    Jackson:
+    Converts JSON → Java (Deserialization)
+    Converts Java → JSON (Serialization)
+    📌 Automatic in Spring Boot
+
+
+-> @ResponseBody
+
+    @ResponseBody
+    public User getUser() {}
+
+    Converts return value to JSON
+    Included automatically in @RestController
+
+-> Handling invalid JSON
+
+    If JSON is invalid:
+    Spring throws HttpMessageNotReadableException
+    Returns 400 Bad Request
+    📌 Can be handled using @ExceptionHandler
+
+

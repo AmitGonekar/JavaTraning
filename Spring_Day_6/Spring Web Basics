@@ -1,0 +1,40 @@
+
+
+-> What is Spring MVC & why it is used?
+    Spring MVC (Model–View–Controller) is a web framework used to build web applications and REST APIs.
+    In Spring Boot, we mainly use Spring MVC to:
+    Handle HTTP requests (GET, POST, PUT, DELETE)
+    Map URLs to controller methods
+    Convert JSON ↔ Java objects
+    Send structured HTTP responses
+    📌 Why used in Spring Boot?
+    Clean separation of layers
+    Annotation-based (less boilerplate)
+    Perfect for REST APIs (microservices)
+
+-> Role of DispatcherServlet
+    DispatcherServlet is the front controller of Spring MVC.
+    👉 Every request goes through it first
+    Responsibilities:
+    Receives HTTP request
+    Finds correct controller method
+    Handles data binding
+    Returns response
+    📌 Think of it as Traffic Police 🚦 for requests.
+
+-> Complete Request–Response Lifecycle
+    Client sends HTTP request
+    Request hits DispatcherServlet
+    Dispatcher finds controller method
+    Controller executes business logic
+    Response object created
+    Response converted to JSON
+    HTTP response sent to client
+
+-> How Spring Boot auto-configures Spring MVC
+    Spring Boot:
+    Detects spring-boot-starter-web
+    Auto-registers DispatcherServlet
+    Configures Jackson, validation, converters
+    Sets default error handling
+    📌 No XML, no manual config needed ✅

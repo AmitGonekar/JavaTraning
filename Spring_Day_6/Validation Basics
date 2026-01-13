@@ -1,0 +1,28 @@
+
+
+-> Why validation is required?
+       Prevent bad data
+       Improve API reliability
+       Avoid database errors
+
+-> Bean Validation (JSR-380)
+    Standard validation API using annotations.
+    Enabled via:
+        @Valid
+
+
+-> Common validation annotations
+    @NotNull
+    @NotBlank
+    @Email
+    @Size(min = 3)
+    @Min(18)
+
+
+-> Validation error handling
+    @PostMapping("/users")
+    public ResponseEntity<?> save(@Valid @RequestBody UserDTO dto)
+
+    Invalid data → 400 Bad Request
+    Handled via:
+    MethodArgumentNotValidException

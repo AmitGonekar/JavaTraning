@@ -1,0 +1,48 @@
+
+
+-> @RestController vs @Controller
+    @RestController
+    public class UserController {
+    }
+
+    | @Controller         | @RestController   |
+    | ------------------- | ----------------- |
+    | Returns View (HTML) | Returns JSON      |
+    | Used in MVC apps    | Used in REST APIs |
+    | Needs @ResponseBody | Already included  |
+
+
+-> @RequestMapping & shortcut annotations
+    @RequestMapping("/users")
+
+    @GetMapping
+    @PostMapping
+    @PutMapping
+    @DeleteMapping
+
+    Cleaner
+    Preferred in real projects
+
+-> Request mapping using HTTP methods
+    @GetMapping("/users")
+    @PostMapping("/users")
+    @PutMapping("/users/{id}")
+    @DeleteMapping("/users/{id}")
+📌 REST APIs depend on HTTP verbs, not method names.
+
+-> PathVariable vs RequestParam
+
+    @GetMapping("/users/{id}")
+    public User getUser(@PathVariable Long id)
+
+    @GetMapping("/users")
+    public User getUser(@RequestParam Long id)
+
+    | PathVariable         | RequestParam      |
+    | -------------------- | ----------------- |
+    | Part of URL          | Query parameter   |
+    | Mandatory            | Optional possible |
+    | Used for resource ID | Used for filters  |
+
+
+

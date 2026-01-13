@@ -1,0 +1,31 @@
+
+
+-> ResponseEntity & advantages
+
+    return ResponseEntity.status(HttpStatus.CREATED).body(user);
+
+    Advantages:
+    Control HTTP status
+    Add headers
+    Professional API design
+
+-> Common HTTP status codes
+
+    | Code | Meaning      |
+    | ---- | ------------ |
+    | 200  | OK           |
+    | 201  | Created      |
+    | 400  | Bad Request  |
+    | 404  | Not Found    |
+    | 500  | Server Error |
+
+-> Custom response structure
+
+    public class ApiResponse<T> {
+        private String message;
+        private T data;
+    }
+
+    Used for:
+    Standard API responses
+    Better frontend integration

@@ -1,0 +1,54 @@
+
+
+
+--> Spring JDBC & JdbcTemplate
+    Role of JDBC in Spring Applications
+    JDBC (Java Database Connectivity) is the core API that allows Java applications to connect and interact with databases using SQL.
+    In Spring-based applications:
+            JDBC is used internally
+            Spring provides higher-level abstractions to simplify JDBC usage
+    Spring JDBC sits on top of JDBC and removes boilerplate code.
+
+--> Problems with Traditional JDBC
+        Traditional JDBC requires:
+        Manual connection creation
+        Manual closing of resources
+        Repeated try-catch blocks
+        Error-prone code
+        Example issues:
+            Forgetting to close ResultSet
+            SQLExceptions everywhere
+            Too much repetitive code
+
+--> How Spring JDBC Solves These Problems
+        Spring JDBC provides:
+        Automatic resource management
+        Simplified exception handling
+        Cleaner code using JdbcTemplate
+        ✅ No need to:
+        Open/close connections
+        Write repetitive try-catch-finally blocks
+
+--> Configure DataSource (application.properties)
+    Spring Boot auto-configures the DataSource when DB properties are provided.
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/testdb
+    spring.datasource.username=root
+    spring.datasource.password=admin
+    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+    Spring Boot automatically creates:
+        DataSource
+        JdbcTemplate bean
+
+
+
+--> Statement vs PreparedStatement vs JdbcTemplate
+
+    | Feature        | Statement | PreparedStatement | JdbcTemplate |
+    | -------------- | --------- | ----------------- | ------------ |
+    | SQL Injection  | ❌ Unsafe  | ✅ Safe            | ✅ Safe       |
+    | Boilerplate    | ❌ High    | ❌ Medium          | ✅ Very Low   |
+    | Performance    | ❌ Poor    | ✅ Better          | ✅ Optimized  |
+    | Spring Support | ❌ No      | ❌ Limited         | ✅ Full       |
+

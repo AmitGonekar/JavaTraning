@@ -1,0 +1,38 @@
+
+
+
+--> Fetch Types
+
+    LAZY vs EAGER
+    Fetch Type	Behavior
+    LAZY	Loads data when needed
+    EAGER	Loads immediately
+
+
+--> Default Fetch Types
+    | Relationship | Default |
+    | ------------ | ------- |
+    | OneToOne     | EAGER   |
+    | ManyToOne    | EAGER   |
+    | OneToMany    | LAZY    |
+    | ManyToMany   | LAZY    |
+
+--> Performance Impact
+    EAGER → Performance issues
+    LAZY → Better memory usage
+    👉 Best Practice: Prefer LAZY
+
+--> Cascade Types
+
+    | Type    | Meaning        |
+    | ------- | -------------- |
+    | ALL     | All operations |
+    | PERSIST | Save child     |
+    | MERGE   | Update child   |
+    | REMOVE  | Delete child   |
+
+--> @OneToMany(cascade = CascadeType.ALL)
+    private List<Employee> employees;
+
+
+

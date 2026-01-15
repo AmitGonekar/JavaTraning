@@ -1,0 +1,33 @@
+
+
+
+
+--> ORM Basics
+    What is Object Relational Mapping (ORM)?
+        ORM maps:
+        Java Objects ↔ Database Tables
+        Instead of writing SQL:
+        You work with objects
+        ORM framework handles SQL internally
+
+--> Advantages of ORM Over JDBC
+        No SQL for basic operations
+        Database-independent
+        Less boilerplate
+        Object-oriented approach
+        Automatic transaction handling
+
+--> Java Object to Table Mapping
+    | Java   | Database |
+    | ------ | -------- |
+    | Class  | Table    |
+    | Object | Row      |
+    | Field  | Column   |
+
+--> Persistence Context & Entity States
+    Persistence Context = cache managed by JPA
+    Entity states:
+        Transient – New object, not saved
+        Persistent – Managed by JPA
+        Detached – Not managed anymore
+        Removed – Marked for deletion

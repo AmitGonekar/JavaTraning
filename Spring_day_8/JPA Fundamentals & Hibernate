@@ -1,0 +1,38 @@
+
+
+--> What is JPA?
+    JPA (Java Persistence API) is a specification (rules only).
+        It defines:
+        Annotations
+        Interfaces
+        Entity lifecycle
+        ❌ JPA does NOT provide implementation.
+
+--> Hibernate as JPA Implementation
+        Hibernate is the most popular JPA implementation.
+        Spring Boot uses Hibernate by default.
+        Entity:
+        Hibernate
+
+--> Configure Spring Boot with JPA & Hibernate
+
+    spring.datasource.url=jdbc:mysql://localhost:3306/testdb
+    spring.datasource.username=root
+    spring.datasource.password=admin
+
+    spring.jpa.hibernate.ddl-auto=update
+    spring.jpa.show-sql=true
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+
+--> Hibernate Auto DDL Generation
+
+    | Value    | Meaning                 |
+    | -------- | ----------------------- |
+    | create   | Drops & creates tables  |
+    | update   | Updates existing tables |
+    | validate | Validates schema        |
+    | none     | No action               |
+
+
+

@@ -1,0 +1,54 @@
+
+
+
+--> Pagination & Sorting (REST API)
+    | Type     | Description             |
+    | -------- | ----------------------- |
+    | Page     | Total count             |
+    | Slice    | No total count (faster) |
+    | Pageable | Request info            |
+
+
+    Controller
+    @GetMapping("/users")
+    public Page<User> getUsers(
+        @RequestParam int page,
+        @RequestParam int size,
+        @RequestParam String sortBy
+    ) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+        return userRepository.findAll(pageable);
+    }
+
+    Auditing
+    Automatically tracks:
+        Created date
+        Modified date
+
+    Enable Auditing
+    @EnableJpaAuditing
+    @SpringBootApplication
+    public class Application {
+    }
+
+    Entity with Auditing
+    @Entity
+    @EntityListeners(AuditingEntityListener.class)
+    public class User {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String name;
+
+        @CreatedDate
+        private LocalDateTime createdAt;
+
+        @LastModifiedDate
+        private LocalDateTime updatedAt;
+    }
+
+
+
+

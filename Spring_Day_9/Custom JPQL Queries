@@ -1,0 +1,10 @@
+
+
+--> Custom JPQL Queries
+
+    JPQL works on Entity names & fields
+    Database-independent
+
+    JPQL Example
+    @Query("SELECT u FROM User u WHERE u.age > :age")
+    List<User> findUsersAboveAge(@Param("age") int age);

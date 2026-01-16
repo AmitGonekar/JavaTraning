@@ -1,0 +1,23 @@
+
+
+
+--> PagingAndSortingRepository
+
+    Used for pagination & sorting
+        Key Interfaces
+            Pageable
+            Page
+            Sort
+
+    Pagination Example
+    Pageable pageable = PageRequest.of(0, 5);
+    Page<User> page = userRepository.findAll(pageable);
+
+    page.getContent().forEach(System.out::println);
+
+    Sorting (Multiple Fields)
+    Sort sort = Sort.by("age").descending()
+                    .and(Sort.by("name").ascending());
+
+    List<User> users = userRepository.findAll(sort);
+

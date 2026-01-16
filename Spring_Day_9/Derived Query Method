@@ -1,0 +1,25 @@
+
+
+
+--> Derived Query Methods
+    Spring creates queries from method names
+
+    | Keyword | Meaning |
+    | ------- | ------- |
+    | And     | AND     |
+    | Or      | OR      |
+    | Between | Range   |
+    | Like    | Pattern |
+    | OrderBy | Sorting |
+
+
+    Repository Methods
+    List<User> findByName(String name);
+    List<User> findByAgeBetween(int start, int end);
+    List<User> findByNameLike(String pattern);
+    List<User> findByAgeGreaterThan(int age);
+    List<User> findByNameOrderByAgeDesc(String name);
+
+
+
+

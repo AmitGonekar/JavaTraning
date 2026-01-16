@@ -1,0 +1,14 @@
+
+
+--> Native Queries
+
+    Used when:
+        Complex SQL
+        DB-specific features
+        Performance tuning
+
+    Native Query
+    @Query(value = "SELECT * FROM user WHERE age > ?1", nativeQuery = true)
+    List<User> findUsersNative(int age);
+
+

@@ -1,0 +1,40 @@
+
+
+--> CrudRepository
+    CrudRepository<T, ID> provides basic CRUD methods.
+    | Method       | Purpose         |
+    | ------------ | --------------- |
+    | save()       | Insert / Update |
+    | findById()   | Get by ID       |
+    | findAll()    | Get all         |
+    | deleteById() | Delete          |
+
+
+
+    Entity
+    @Entity
+    public class User {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        private String name;
+        private int age;
+
+        // getters & setters
+    }
+
+
+    Repository
+    public interface UserRepository extends CrudRepository<User, Long> {
+    }
+
+
+
+    Service Usage
+    userRepository.save(user);
+    userRepository.findById(1L);
+    userRepository.findAll();
+    userRepository.deleteById(1L);
+

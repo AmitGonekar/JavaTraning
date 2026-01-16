@@ -1,0 +1,28 @@
+
+
+--> 🚀 JpaRepository
+
+    JpaRepository extends CrudRepository + PagingAndSortingRepository
+    ✅ Extra Advantages
+        saveAll()
+        flush()
+        deleteInBatch()
+        Pagination & sorting support
+
+
+
+    Example :-
+        public interface UserRepository extends JpaRepository<User, Long> {
+        }
+
+    Batch Save
+    List<User> users = List.of(
+        new User(null,"Amit",25),
+        new User(null,"Ravi",30)
+    );
+
+    userRepository.saveAll(users);
+    userRepository.flush(); // forces DB sync
+
+    📝 flush() → pushes data immediately to DB
+

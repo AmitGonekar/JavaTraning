@@ -1,0 +1,56 @@
+
+
+--> What is Exception Handling?
+    Exception handling is the process of handling runtime errors so that:
+    The application does not crash
+    The client gets a clear and meaningful response
+    The API remains stable and professional
+    👉 In REST APIs, stack traces or vague errors are bad practice.
+    Instead, we return proper HTTP status codes + JSON error responses.
+
+
+--> Exception Handling Strategies in Spring Boot
+    1. Try–Catch (Local Handling)
+        try {
+            // risky code
+        } catch (Exception e) {
+            // handle exception
+        }
+    ✅ Useful for very specific logic
+    ❌ Not recommended for REST controllers (code becomes messy)
+
+    2. @ExceptionHandler (Controller Level)
+    Handles exceptions inside a single controller
+    Still causes duplication if many controllers exist
+
+    3. @ControllerAdvice (Global – Best Practice)
+    Handles exceptions across the entire application
+    Keeps controllers clean
+    Used in real projects
+
+    4. Custom Exceptions
+    Business-specific errors
+    Improves readability + debugging
+    Example:
+        ResourceNotFoundException
+        InvalidInputException
+
+
+--> What is @ControllerAdvice?
+    @ControllerAdvice is used for global exception handling.
+    📌 It:
+    Catches exceptions from any controller
+    Sends consistent API responses
+    Avoids repeated try-catch blocks
+    ✅ Industry standard approach
+
+
+--> Custom Exceptions
+    Custom exceptions represent business errors, not technical failures.
+    Example:
+        User not found
+        Product not found
+        Invalid input
+    They usually:
+        Extend RuntimeException
+        Contain a meaningful message

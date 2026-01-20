@@ -1,0 +1,20 @@
+
+
+--> Log Levels (Low → High)
+    | Level | Use                        |
+    | ----- | -------------------------- |
+    | TRACE | Very detailed (rare)       |
+    | DEBUG | Developer debugging        |
+    | INFO  | Application flow           |
+    | WARN  | Unexpected but recoverable |
+    | ERROR | Failure / Exception        |
+
+
+--> Default Levels in Spring Boot
+    Root: INFO
+    Spring framework: INFO / WARN
+
+--> Logging & Performance
+    DEBUG/TRACE in production
+    File logging too much
+    Proper log level = better performance

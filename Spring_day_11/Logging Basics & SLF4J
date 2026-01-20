@@ -1,0 +1,26 @@
+
+
+--> Logging Basics & SLF4J
+    Why Logging is Important in Enterprise Applications
+    Logging helps you:
+        Debug issues in production
+        Track application flow
+        Identify failures and performance issues
+        Audit user activities
+        Avoid using System.out.println() (not professional)
+    👉 In real projects, logs = production visibility
+
+
+--> What is SLF4J?
+    SLF4J (Simple Logging Facade for Java) is:
+        A facade (wrapper) for logging frameworks
+        Works with Logback, Log4j2, JUL, etc.
+    ✅ Advantage:
+        You can change logging framework without changing code
+
+--> Spring Boot & SLF4J Integration
+    Spring Boot:
+        Uses SLF4J + Logback by default
+        No extra dependency needed
+        Logger is auto-configured
+

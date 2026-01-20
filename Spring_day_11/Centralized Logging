@@ -1,0 +1,31 @@
+
+--> Centralized Logging
+    What is Centralized Logging?
+        Collect logs from multiple services
+        Store in one place
+        Search, filter, analyze
+
+    Challenges in Microservices
+        Logs spread across servers
+        Hard to trace requests
+        No single visibility
+
+    ELK Stack (Intro)
+        Elasticsearch → Storage & search
+        Logstash → Log processing
+        Kibana → Visualization
+
+--> Spring Boot Actuator
+
+    What is Actuator?
+        Provides production-ready endpoints
+        Used for monitoring & management
+
+    Common Actuator Endpoints
+    | Endpoint | Purpose             |
+    | -------- | ------------------- |
+    | /health  | App health          |
+    | /metrics | Performance metrics |
+    | /info    | App information     |
+    | /env     | Environment         |
+

@@ -1,0 +1,16 @@
+
+
+--> Health, Metrics & Info Endpoints
+
+
+    Health Endpoint
+        Shows application status
+        UP / DOWN
+
+    Metrics Endpoint
+        JVM memory
+        CPU
+        HTTP request count
+
+    Info Endpoint
+        Custom application info

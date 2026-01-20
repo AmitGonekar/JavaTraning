@@ -1,0 +1,20 @@
+
+
+--> Logback Configuration
+    What is Logback?
+        Default logging framework in Spring Boot
+        Fast, flexible, production-ready
+
+--> logback.xml vs logback-spring.xml
+    | Feature          | logback.xml | logback-spring.xml |
+    | ---------------- | ----------- | ------------------ |
+    | Spring profiles  | ❌ No        | ✅ Yes              |
+    | Property support | ❌ Limited   | ✅ Full             |
+    | Recommended      | ❌           | ✅                  |
+
+    Always use logback-spring.xml
+
+--> Appenders, Encoders & Patterns
+        Appender → Where logs go (console/file)
+        Encoder → How logs look
+        Pattern → Log format

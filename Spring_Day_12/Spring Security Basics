@@ -1,0 +1,41 @@
+
+
+--> Spring Security Basics
+
+    Authentication vs Authorization
+        | Concept            | Meaning                          | Example                        |
+        | ------------------ | -------------------------------- | ------------------------------ |
+        | **Authentication** | Verifies **who you are**         | Login with username & password |
+        | **Authorization**  | Verifies **what you can access** | Only ADMIN can delete users    |
+
+    Flow in Spring Security
+    👉 Authentication happens first
+    👉 Authorization happens after authentication
+
+--> Spring Security Architecture (High Level)
+    Spring Security is based on a Servlet Filter Chain.
+    Every HTTP request goes through security filters before hitting your controller.
+    🔧 Core Components (Easy Explanation)
+
+    | Component                  | Role                                |
+    | -------------------------- | ----------------------------------- |
+    | **SecurityContext**        | Stores logged-in user details       |
+    | **Authentication**         | Represents user credentials & roles |
+    | **AuthenticationManager**  | Main entry point for authentication |
+    | **AuthenticationProvider** | Validates credentials               |
+    | **UserDetailsService**     | Loads user from DB / memory         |
+    | **PasswordEncoder**        | Encrypts & verifies passwords       |
+
+
+--> Filters & Roles
+    Security Filters
+    Intercept every request
+    Handle:
+    Authentication
+    Authorization
+    Exception handling
+    🔹 Roles (Authorities)
+    Define permissions
+    Usually prefixed with ROLE_
+
+

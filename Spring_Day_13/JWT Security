@@ -1,0 +1,24 @@
+
+
+--> JWT Security
+    JWT is a stateless authentication mechanism used mainly in REST APIs.
+    Once a token is issued, the server does not store user session data
+
+--> JWT Flow
+    Step-by-Step Flow
+        Client sends username & password to /login
+        Server validates credentials
+        Server generates JWT token
+        Token is returned to client
+        Client sends token in
+        Authorization: Bearer <token>
+        Server validates token on every request
+        Access granted if token is valid
+        No session, no server-side storage
+
+--> Securing REST APIs with JWT – Theory
+        ✔ JWT works with filters, not sessions
+        ✔ Every request passes through JWT filter
+        ✔ Token validated before controller execution
+        ✔ Stateless → High scalability
+

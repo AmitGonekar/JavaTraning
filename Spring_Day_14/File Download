@@ -1,0 +1,39 @@
+
+--> File Download
+    File download allows users to retrieve stored files.
+    Spring Boot uses:
+    Resource → represents file
+    ResponseEntity → controls headers & response
+
+--> Download file by name
+    @GetMapping("/download/{fileName}")
+    public ResponseEntity<Resource> downloadFile(@PathVariable String fileName)
+            throws IOException {
+
+        Path path = Paths.get("uploads/" + fileName);
+        Resource resource = new UrlResource(path.toUri());
+
+        if (!resource.exists()) {
+            throw new RuntimeException("File not found");
+        }
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\"" + fileName + "\"")
+                .body(resource);
+    }
+
+
+--> Proper headers
+        Content-Disposition: attachment
+        Forces browser to download, not open
+
+--> File-not-found handling
+        if (!resource.exists()) {
+            throw new RuntimeException("File not found");
+        }
+
+
+
+
+

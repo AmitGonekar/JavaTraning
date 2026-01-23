@@ -1,0 +1,35 @@
+
+--> PDF Generation
+    PDF generation is used for:
+            Reports
+            Invoices
+            Tickets
+            Popular libraries:
+            iText
+            Apache PDFBox
+
+--> Generate PDF dynamically (iText)
+        Document document = new Document();
+        PdfWriter.getInstance(document,
+                new FileOutputStream("pdfs/report.pdf"));
+
+        document.open();
+        document.add(new Paragraph("User Report"));
+        document.add(new Paragraph("Generated on: " + LocalDate.now()));
+        document.close();
+
+--> Download generated PDF
+        @GetMapping("/download-pdf")
+        public ResponseEntity<Resource> downloadPdf() throws IOException {
+            Path path = Paths.get("pdfs/report.pdf");
+            Resource resource = new UrlResource(path.toUri());
+
+            return ResponseEntity.ok()
+                    .header(HttpHeaders.CONTENT_DISPOSITION,
+                            "attachment; filename=report.pdf")
+                    .body(resource);
+        }
+
+
+--> Store PDF on server
+

@@ -1,0 +1,47 @@
+
+
+--> File Handling in Spring Boot.
+    File Upload (MultipartFile) –
+        File upload allows clients (Postman / Browser) to send files to the server using
+        multipart/form-data.
+        Spring Boot provides MultipartFile which:
+        Holds uploaded file data
+        Supports validation (size, type)
+        Allows saving files to server or DB
+
+--> REST API to upload file
+        @PostMapping("/upload")
+        public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
+            return ResponseEntity.ok("File uploaded successfully");
+        }
+
+--> Validate file type and size
+    if (file.isEmpty()) {
+        throw new RuntimeException("File is empty");
+    }
+    if (!file.getContentType().equals("application/pdf")) {
+        throw new RuntimeException("Only PDF files allowed");
+    }
+    if (file.getSize() > 5 * 1024 * 1024) {
+        throw new RuntimeException("File size exceeds 5MB");
+    }
+
+--> Store file on server
+    String uploadDir = "uploads/";
+    Files.createDirectories(Paths.get(uploadDir));
+
+    Path path = Paths.get(uploadDir + file.getOriginalFilename());
+    Files.write(path, file.getBytes());
+
+--> Return file metadata
+    Map<String, Object> response = new HashMap<>();
+    response.put("fileName", file.getOriginalFilename());
+    response.put("size", file.getSize());
+    response.put("type", file.getContentType());
+
+    return ResponseEntity.ok(response);
+
+
+
+
+

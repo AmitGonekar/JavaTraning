@@ -1,0 +1,9 @@
+
+
+-> Storing Files – DB vs File System
+    | Feature     | File System | Database (BLOB)   |
+    | ----------- | ----------- | ----------------- |
+    | Performance | ✅ Fast      | ❌ Slower          |
+    | Large files | ✅ Best      | ❌ Not recommended |
+    | Backup      | Manual      | Automatic         |
+    | Scalability | ✅ High      | ❌ Limited         |

@@ -1,0 +1,36 @@
+
+--> Image Handling
+        Image handling includes:
+        Upload
+        Validation (PNG, JPG)
+        Storage
+        Display in browser
+        Images are usually stored in file system.
+
+--> Upload image
+        @PostMapping("/upload-image")
+        public String uploadImage(@RequestParam MultipartFile image) throws IOException {
+            Files.write(Paths.get("images/" + image.getOriginalFilename()),
+                        image.getBytes());
+            return "Image uploaded";
+        }
+
+--> Validate image format
+        String type = image.getContentType();
+        if (!type.equals("image/png") && !type.equals("image/jpeg")) {
+            throw new RuntimeException("Invalid image format");
+        }
+
+--> Display image in browser
+        @GetMapping(value = "/image/{name}", produces = MediaType.IMAGE_JPEG_VALUE)
+        public byte[] getImage(@PathVariable String name) throws IOException {
+            return Files.readAllBytes(Paths.get("images/" + name));
+        }
+
+
+
+
+
+
+
+

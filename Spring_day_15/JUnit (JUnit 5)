@@ -1,0 +1,24 @@
+
+--> JUnit (JUnit 5)
+    Theory
+    Main testing framework in Spring Boot
+    Uses annotations and assertions
+    JUnit 5 = default
+
+
+--> Key Annotations
+    @Test          // test method
+    @BeforeEach    // runs before each test
+    @AfterEach     // cleanup
+    @DisplayName   // readable test name
+    @Tag("unit")   // grouping tests
+
+--> @Test
+    @DisplayName("Calculate total with valid inputs")
+    void testCalculation() {
+        assertEquals(200, 100 * 2);
+    }
+
+
+
+

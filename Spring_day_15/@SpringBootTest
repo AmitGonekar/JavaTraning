@@ -1,0 +1,18 @@
+
+--> @SpringBootTest
+
+        Theory
+        Loads full application
+        Slow but very powerful
+        Near production testing
+
+
+        @SpringBootTest
+        class ApplicationStartupTest {
+
+            @Test
+            void contextLoads() {
+                // passes if application starts successfully
+            }
+        }
+

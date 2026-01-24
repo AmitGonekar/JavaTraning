@@ -1,0 +1,8 @@
+
+
+--> Theory
+    Tests multiple layers together
+    Loads Spring context
+    Controller → Service → Repository
+    Usually involves real database (H2)
+    👉 Checks whether everything works as a system, not just logic.

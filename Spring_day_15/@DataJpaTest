@@ -1,0 +1,6 @@
+
+--> @DataJpaTest
+    Theory
+    Tests repository layer
+    Uses H2 in-memory DB
+    Rolls back after every test

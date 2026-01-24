@@ -1,0 +1,11 @@
+
+--> Spring Boot Testing
+    Unit Testing
+        Theory (Simple Words)
+        Unit testing means testing one class or one method only
+        No database, no server, no real dependencies
+        All dependencies are mocked
+        Focus is business logic only
+        Fastest type of test
+        👉 Example: Testing OrderService.calculateTotal() without calling DB or payment gateway.
+

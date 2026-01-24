@@ -1,0 +1,6 @@
+
+--> Mockito
+    Theory
+    Used to mock dependencies
+    Prevents real DB or API calls
+    Helps test only one class

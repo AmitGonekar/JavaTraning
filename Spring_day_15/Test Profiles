@@ -1,0 +1,13 @@
+
+
+--> Test Profiles
+    Theory
+    Separate configs for testing
+    Avoids using production DB
+    Uses application-test.properties
+
+
+    @SpringBootTest
+    @ActiveProfiles("test")
+    class ProfileBasedTest {
+    }

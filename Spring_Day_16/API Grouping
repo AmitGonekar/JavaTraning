@@ -1,0 +1,17 @@
+
+--> API Grouping
+    What Is API Grouping?
+    API grouping is the concept of organizing endpoints into logical sections.
+    Instead of dumping all APIs into one long list, grouping creates:
+    Clear separation
+    Better navigation
+    Easier maintenance
+
+
+    Why API Grouping Is Needed
+    Large applications can have hundreds of endpoints
+    Makes Swagger UI clean and readable
+    Helps teams focus on relevant APIs
+    Essential for scalable systems
+    From an architectural viewpoint:
+    API grouping improves maintainability and usability

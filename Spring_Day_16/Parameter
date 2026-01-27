@@ -1,0 +1,29 @@
+
+--> Parameter
+    @Parameter is used to document input parameters of an API.
+
+    APIs often accept:
+    Path parameters
+    Query parameters
+    Header values
+    Optional filters
+    @Parameter explains what those inputs mean, not just their data type.
+
+
+    What It Enhances
+    With @Parameter, Swagger can show:
+    Parameter purpose
+    Example values
+    Whether it is required or optional
+    Where it is passed (path, query, header)
+
+
+    Why It Is Important
+    Prevents misuse of APIs
+    Reduces incorrect API calls
+    Helps testers and frontend developers
+    Improves API correctness and confidence
+    In real projects, this avoids issues like:
+    “What does this parameter actually do?”
+
+

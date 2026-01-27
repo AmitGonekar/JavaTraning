@@ -1,0 +1,21 @@
+
+--> @Operation
+    is used to document individual API endpoints.
+    While OpenAPI can auto-detect endpoints, @Operation adds human-readable meaning to each API.
+
+    What It Describes
+    @Operation explains:
+    What the endpoint does
+    Why it exists
+    How it should be used
+    This is extremely important because method names alone are not enough for API consumers.
+
+
+    Why @Operation Matters
+    Improves API clarity
+    Reduces dependency on external documentation
+    Helps frontend and QA teams understand intent
+    Makes Swagger UI self-explanatory
+    From an interview perspective:
+    @Operation improves API discoverability and usability
+

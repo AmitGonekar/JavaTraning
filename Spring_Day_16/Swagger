@@ -1,0 +1,45 @@
+
+--> Swagger
+    OpenAPI is just a standard format that describes what APIs you have.
+    Swagger is a toolset that reads OpenAPI and shows:
+    All APIs
+    Request parameters
+    Request/response body
+    Try-it-out button
+    In Spring Boot, we mostly use springdoc-openapi (no extra config headache).
+
+    What is OpenAPI?
+    OpenAPI is a standard specification that describes how a REST API works.
+    It answers questions like:
+    What endpoints exist?
+    Which HTTP methods are supported?
+    What parameters are required?
+    What request and response formats are used?
+    What errors can occur?
+    Think of OpenAPI as a contract between backend developers and API consumers (frontend, mobile apps, third-party systems).
+
+    What is Swagger?
+    Swagger is a set of tools built around the OpenAPI specification.
+    Its main purpose is to visualize and interact with APIs.
+    Swagger provides:
+    Interactive API documentation (Swagger UI)
+    API exploration without writing client code
+    Auto-generated request/response examples
+    Easy API testing from the browser
+    In short:
+    OpenAPI = specification (rules)
+    Swagger = tools that use those rules
+
+
+    Why Swagger/OpenAPI is Important
+    Eliminates confusion between frontend and backend teams
+    Acts as live documentation (always in sync with code)
+    Reduces dependency on Postman collections
+    Helps new developers understand APIs quickly
+    Extremely useful in microservices and enterprise systems
+
+
+
+
+
+

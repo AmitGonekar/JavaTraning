@@ -1,0 +1,26 @@
+
+
+--> @OpenAPIDefinition
+    @OpenAPIDefinition is used to define global metadata for the entire API documentation.
+    Instead of repeating information for every endpoint, this annotation provides:
+    API name
+    Version
+    Description
+    Server/environment details
+
+
+--> What It Represents in Swagger UI
+    Information defined using @OpenAPIDefinition appears at the top of Swagger UI, acting like a cover page for the API.
+    It gives consumers immediate clarity about:
+    What this API is for
+    Which version they are using
+    Which environment they are connected to
+
+
+--> Why It Is Important
+    Standardizes documentation across services
+    Helps version control APIs
+    Essential for enterprise and production-grade systems
+    Useful when the same API is deployed across multiple environments (dev, QA, prod)
+
+

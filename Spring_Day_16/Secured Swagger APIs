@@ -1,0 +1,32 @@
+
+--> Secured Swagger APIs
+    Why Swagger Needs Security
+    Most real-world APIs are secured using:
+    JWT tokens
+    OAuth2
+    Basic authentication
+    Swagger must support these security mechanisms so developers can:
+    Test secured APIs
+    Validate authentication flows
+    Avoid disabling security for testing
+
+
+    How Swagger Handles Security (Conceptually)
+    Swagger allows defining security schemes, such as:
+    Bearer Token (JWT)
+    API Keys
+    OAuth2 flows
+    Once configured:
+    Swagger UI provides an Authorize button
+    Users can enter credentials or tokens
+    Swagger automatically sends auth data with requests
+
+
+    Why Secured Swagger Is Important
+    Prevents exposing sensitive APIs
+    Allows safe testing of protected endpoints
+    Maintains production-level security
+    Avoids security bypass during development
+    In production systems:
+    Swagger access itself is often restricted to non-public environments
+

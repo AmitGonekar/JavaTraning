@@ -1,0 +1,36 @@
+
+--> Spring Boot Caching
+        What is Caching?
+        Caching means storing frequently used data in fast-access storage so that repeated requests don’t hit the database every time.
+
+        In-Memory Cache vs Distributed Cache
+        | Feature      | In-Memory Cache         | Distributed Cache |
+        | ------------ | ----------------------- | ----------------- |
+        | Storage      | Same JVM memory         | External server   |
+        | Speed        | Very fast               | Slightly slower   |
+        | Scalability  | ❌ Limited               | ✅ High            |
+        | Data sharing | ❌ No                    | ✅ Yes             |
+        | Example      | ConcurrentMap, Caffeine | **Redis**         |
+
+    Read-through vs Write-through Cache
+    Read-through
+    App checks cache first
+    If miss → DB → cache updated → return data
+    Write-through
+    Data written to cache and DB together
+    Ensures consistency
+    Spring Boot caching mostly behaves like read-through.
+
+--> Cache Hit & Cache Miss
+    Cache Hit → Data found in cache → FAST 🚀
+    Cache Miss → Data not found → DB call → cache updated
+
+--> TTL & Eviction Policies
+    TTL (Time To Live)
+    Time after which cache entry expires
+    Example: 10 minutes
+    Eviction Policies
+    LRU (Least Recently Used)
+    LFU (Least Frequently Used)
+    TTL-based eviction
+

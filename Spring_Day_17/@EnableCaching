@@ -1,0 +1,74 @@
+
+--> @EnableCaching
+    @EnableCaching activates Spring’s annotation-driven cache mechanism.
+
+    Without it:
+    ❌ @Cacheable, @CachePut, @CacheEvict will NOT work
+
+    With it:
+    ✅ Spring creates proxy classes to intercept method calls and apply caching logic.
+
+--> @Cacheable
+    @Cacheable
+    ✔ Stores method result in cache
+    ✔ If same method + same parameters → returns cached value
+    ✔ Method is skipped on cache hit
+
+    How it works internally:
+
+    Key generated
+
+    Cache checked
+
+    If hit → return value
+
+    If miss → execute method → store result → return
+
+--> @CachePut
+    @CachePut
+    ✔ Always executes the method
+    ✔ Always updates cache
+    ✔ Used mainly for update operations
+
+    ❗ Difference from @Cacheable:
+
+    @Cacheable → may skip method
+
+    @CachePut → never skips method
+
+--> @CacheEvict
+    @CacheEvict removes data from cache.
+
+    Used when:
+
+    Deleting data
+
+    Data becomes stale
+
+    Options:
+
+    Remove single entry
+
+    Remove all entries
+
+--> Redis Basics
+    What is Redis?
+    Redis is an in-memory key–value data store used as:
+    Cache
+    Database
+    Message broker
+
+--> Key Features
+
+    Extremely fast (RAM-based)
+
+    Supports TTL
+
+    Distributed & scalable
+
+    Persistence support (RDB, AOF)
+
+    Replication & high availability
+
+--> Redis as Spring Cache Provider
+

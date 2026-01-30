@@ -1,0 +1,109 @@
+
+        Scheduling & Async in Spring Boot
+
+--> Introduction
+    Some tasks must:
+        Run automatically
+        Run in the background
+        Run without blocking the main thread
+        Run at fixed times or intervals
+    Spring Boot provides two powerful features for this:
+        Scheduling → run tasks at fixed time/interval
+        Async execution → run tasks in background threads
+
+
+--> @Scheduled
+    @Scheduled is used to run a method automatically based on time rules.
+
+    Common Use Cases
+        Cleanup old records
+        Send scheduled emails
+        Generate reports
+        Sync data
+        Retry failed jobs
+        Batch processing
+    Important Points
+        Runs without user interaction
+        Method must not have parameters
+        Method should return void
+        Works on a separate scheduler thread
+
+--> Enabling Scheduling
+    Before using @Scheduled, you must enable scheduling.
+
+    @EnableScheduling
+    @SpringBootApplication
+    public class MyApplication {
+        public static void main(String[] args) {
+            SpringApplication.run(MyApplication.class, args);
+        }
+    }
+
+--> @Scheduled
+    fixedRate
+
+        Runs method every X milliseconds, irrespective of previous execution.
+        @Scheduled(fixedRate = 5000)
+        public void runTask() {
+            System.out.println("Task running every 5 seconds");
+        }
+
+    fixedDelay
+
+        Runs method after previous execution finishes.
+        @Scheduled(fixedDelay = 5000)
+        public void runTask() {
+            System.out.println("Task runs 5 seconds after completion");
+        }
+
+    initialDelay
+
+            Delays first execution.
+            @Scheduled(initialDelay = 10000, fixedRate = 5000)
+            public void runTask() {
+                System.out.println("Starts after 10 seconds");
+            }
+
+
+--> Cron Expressions – Theory
+    Cron is used for time-based scheduling (real calendar timing).
+
+    Cron Format (Spring)
+    second minute hour day month weekday
+    0 0 10 * * ?
+    Runs every day at 10 AM
+
+
+--> @Async
+    @Async allows a method to:
+        Run in a separate thread
+        Execute asynchronously
+        Not block the main request thread
+    Why Async?
+    Without async:
+        Controller waits until task finishes 😴
+    With async:
+        Controller returns response immediately ⚡
+        Task continues in background
+
+--> Important Async Rules (Interview Gold)
+    ❌ @Async does NOT work on private methods
+    ❌ Self-invocation will not trigger async
+    ✔ Must be called from another Spring bean
+    ✔ Uses TaskExecutor internally
+
+
+--> Thread Pool
+    Threads are expensive ❌
+    Creating unlimited threads = crash 💥
+    So Spring uses Thread Pools to:
+    Reuse threads
+    Control concurrency
+    Improve stability
+    Default executor is SimpleAsyncTaskExecutor (not production-ready)
+
+--> Scheduling + Async Together
+    By default:
+    Scheduled tasks run single-threaded
+    To make them async:
+

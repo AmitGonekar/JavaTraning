@@ -1,0 +1,34 @@
+
+
+--> Basic Task Steps
+
+        Step 1: Create Two Spring Boot Applications
+            User Service
+            Order Service
+            Each should be a separate Spring Boot project.
+
+
+        Step 2: Expose REST APIs
+            User Service
+            Create UserController
+            Expose API:
+            GET /users/{id} → returns user details
+            Order Service
+            Create OrderController
+            Calls User Service API using:
+            RestTemplate or
+            Feign Client
+
+        Step 3: Configure Different Ports
+            In application.yml:
+
+        Step 4: Service-to-Service Communication
+            Order Service sends HTTP request to:
+            Receives user details and returns combined response
+
+        Step 5: Test Using Postman
+            Start User Service
+            Start Order Service
+            Call Order Service API
+            Verify it internally calls User Service
+

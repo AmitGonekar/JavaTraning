@@ -1,0 +1,68 @@
+
+
+--> What is Microservices Architecture?
+        Microservices architecture is a software design approach where an application is divided into small, independent services, each responsible for a single business capability.
+        Each service runs in its own process
+        Communicates with other services via APIs (HTTP/REST or messaging)
+        Can be developed, deployed, and scaled independently
+        👉 Example: User Service, Order Service, Payment Service as separate applications.
+
+--> Monolithic vs Microservices
+        Monolithic Architecture
+            Entire application is one single unit
+            All modules share the same codebase and database
+            One small change requires rebuilding and redeploying the whole app
+            Failure in one module can affect the entire system
+        Microservices Architecture
+            Application is split into multiple small services
+            Each service has its own codebase and database
+            Services can be deployed independently
+            Failure in one service does not crash others
+
+        👉 In short:
+        Monolith = tightly coupled
+        Microservices = loosely coupled
+
+--> Key Characteristics of Microservices
+        Independent Deployment – Services can be deployed without affecting others
+        Scalability – Scale only the service that needs more resources
+        Fault Isolation – One service failure won’t break the entire system
+        Decentralized Data Management – Each service manages its own database
+
+--> Advantages of Microservices
+        Better scalability (scale only required services)
+        Faster development (multiple teams work independently)
+        Flexibility (different tech stacks per service)
+        Easier maintenance due to smaller codebases
+
+--> Challenges of Microservices
+        Increased complexity (many services to manage)
+        Network latency (inter-service communication over network)
+        Data consistency issues (distributed databases)
+        Monitoring & debugging is harder than monolith
+
+--> Common Microservices Components
+        API Gateway – Single entry point for all client requests
+        Service Registry – Keeps track of service locations (e.g., Eureka)
+        Config Server – Centralized configuration management
+        Load Balancer – Distributes traffic across service instances
+
+--> Communication Types
+        Synchronous Communication
+            REST APIs using HTTP
+            Client waits for response
+            Example: Order Service calling User Service via REST
+        Asynchronous Communication
+            Messaging systems (Kafka, RabbitMQ)
+            No direct waiting for response
+            Used for high-throughput, event-driven systems
+
+--> Basic Practical Task
+        Goal
+        Create two Spring Boot microservices:
+        User Service – Provides user details
+        Order Service – Calls User Service to fetch user info
+
+
+
+

@@ -1,0 +1,88 @@
+
+    Microservices – Day 2 Task
+
+--> Service Discovery
+        Why Service Discovery is needed
+        In microservices:
+        Services scale up/down dynamically
+        IP addresses & ports change frequently
+        Hard-coding URLs like http://localhost:8082 ❌ is not reliable
+        👉 Service Discovery solves this by allowing services to find each other dynamically using service names.
+
+--> Client-side vs Server-side Discovery
+        | Type                      | How it works                                          | Example             |
+        | ------------------------- | ----------------------------------------------------- | ------------------- |
+        | **Client-side discovery** | Client asks registry & decides which instance to call | **Eureka**          |
+        | **Server-side discovery** | Load balancer decides target service                  | Kubernetes, AWS ELB |
+
+--> Netflix Eureka Overview
+        Eureka is a service registry
+        Microservices register themselves
+        Other services discover them by name
+        Key components:
+        Eureka Server → Registry
+        Eureka Client → Microservices
+
+--> Service Registration & Heartbeat
+        Each service sends a heartbeat every 30 sec
+        If heartbeat stops → service is removed
+        Prevents calling dead services
+
+--> Spring Cloud Config Server
+        Problems with Local Config Files
+        Same config duplicated in every service
+        Change requires rebuild & redeploy
+        Hard to manage multiple environments
+
+--> Centralized Configuration Concept
+        All configs stored in Git
+        Services fetch config at startup
+        One change → affects all services
+
+--> Refresh Scope & Profiles
+        @RefreshScope → refresh config without restart
+        Profiles:
+        dev
+        test
+        prod
+
+--> Inter-Service Communication
+
+        RestTemplate vs WebClient vs OpenFeign
+        | Feature        | RestTemplate | WebClient    | OpenFeign   |
+        | -------------- | ------------ | ------------ | ----------- |
+        | Style          | Blocking     | Non-blocking | Declarative |
+        | Code           | Boilerplate  | Complex      | Clean       |
+        | Load balancing | Manual       | Manual       | Automatic   |
+        | Recommended    | ❌ Deprecated | ✔ Reactive   | ✔ Best      |
+
+
+       Feign Client Basics
+        Interface-based REST client
+        No boilerplate HTTP code
+        Works seamlessly with Eureka
+
+      Load Balancing (Eureka + Feign)
+       Feign uses service name
+       Eureka returns instances
+       Calls are auto load-balanced
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+         Apache Kafka with Spring Boot
+
+--> Introduction to Apache Kafka
+        Apache Kafka is a distributed event streaming platform used to build real-time data pipelines and event-driven applications.
+        Kafka is designed to:
+        Handle millions of messages per second
+        Store data durably
+        Allow real-time consumption
+        Support horizontal scaling
+        👉 Common use cases:
+        Microservices communication
+        Event-driven systems
+        Log aggregation
+        Real-time analytics
+        Order & notification systems
+
+--> Kafka Core Concepts
+        Producer
+            Sends (publishes) messages to Kafka topics
+            Does not know which consumer receives the message
+
+        Consumer
+            Reads messages from Kafka topics
+            Pull-based model (consumer pulls data)
+
+        Broker
+            Kafka server that stores and manages messages
+            Kafka cluster = multiple brokers
+
+        Topic
+            Logical channel where messages are sent
+            Example: order-topic, payment-topic
+
+        Partition
+            Topic is split into partitions
+            Enables parallel processing
+            Messages inside a partition are ordered
+
+        Offset
+            Unique number for each message in a partition
+            Used to track consumption state
+
+        Consumer Group
+            Multiple consumers working together
+            Each partition is consumed by only one consumer in a group
+
+        ZooKeeper / KRaft
+            Old Kafka → ZooKeeper
+            New Kafka → KRaft (Kafka Raft)
+            Manages metadata and leader election
+
+--> Kafka Architecture Overview
+        Flow:
+        Producer sends message to a topic
+        Broker stores message in partition
+        Consumer pulls message using offset
+        Message stays in Kafka based on retention policy
+        ✔ Kafka does not delete messages immediately after consumption
+
+--> Advantages of Kafka
+        High throughput & low latency
+        Horizontally scalable
+        Fault-tolerant (replication)
+        Supports event-driven microservices
+        Message replay using offsets
+
+--> Spring Boot + Kafka
+        Spring Boot provides spring-kafka library which:
+            Auto-configures Kafka Producer & Consumer
+            Simplifies configuration
+            Uses annotations for listeners
+        Key components:
+            KafkaTemplate → Producer
+            @KafkaListener → Consumer
+            KafkaAdmin → Topic creation
+
+--> Configuration Tasks
+        bootstrap-servers → Kafka broker address
+        group-id → Consumer group
+        auto-offset-reset
+        earliest → read from beginning
+        latest → read new messages only
+        Serializer / Deserializer → String / JSON
+
+--> Advanced Practice Tasks
+        JSON Messages
+        Use JsonSerializer & JsonDeserializer
+        Multiple Partitions
+        Increase partition count
+        Observe parallel consumption
+        Error Handling
+        Retry mechanism
+        Dead Letter Topic (DLT)
+        Manual Offset Commit
+        AckMode.MANUAL
+
+        Microservices Use Case
+        Order Service → Kafka → Notification Service
+
+--> Learning Outcomes
+        After completing this task, you can:
+        Explain Kafka architecture clearly
+        Implement Producer & Consumer
+        Use Kafka in microservices
+        Answer Kafka interview questions confidently
+

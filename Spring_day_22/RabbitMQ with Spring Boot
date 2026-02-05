@@ -1,0 +1,103 @@
+
+--> Introduction to RabbitMQ
+    RabbitMQ is an open-source message broker that implements the AMQP (Advanced Message Queuing Protocol).
+    Why RabbitMQ?
+    Enables asynchronous communication
+    Decouples producer and consumer services
+    Improves scalability and reliability
+    Supports message acknowledgment, retry, and durability
+    Real-world example
+    Order Service sends an order event → Notification Service consumes it → Email/SMS is sent
+    (Order service does not wait for notification service)
+
+--> RabbitMQ Core Concepts
+    Producer
+        Application that sends messages
+        Does not send directly to a queue
+        Sends messages to an exchange
+    Consumer
+        Application that receives messages
+        Listens to a queue
+        Processes messages asynchronously
+    Exchange
+        Routes messages to queues
+        Makes routing decisions based on:
+        Exchange type
+        Routing key
+        Bindings
+    Queue
+        Stores messages until consumed
+        FIFO (First In First Out)
+        Can be durable or temporary
+    Binding
+        Connection between exchange and queue
+        Defines routing rules
+        Routing Key
+        A string used by exchanges to route messages
+        Example: order.created, payment.success
+    Broker
+        RabbitMQ server itself
+        Manages exchanges, queues, and message delivery
+
+--> Exchange Types
+    Direct Exchange
+        Routes message only if routing key exactly matches
+        Used for point-to-point communication
+        Example:
+        routingKey = order.created
+    Topic Exchange
+        Uses wildcards
+        * → one word
+        # → zero or more words
+        Best for event-based systems
+        Example:
+        order.* → order.created, order.updated
+        order.# → all order events
+    Fanout Exchange
+        Broadcasts message to all bound queues
+        Ignores routing key
+        Example:
+        Send message to:
+        Email service
+        SMS service
+        Analytics service
+    Headers Exchange
+        Routes based on message headers
+        Less commonly used
+        Used when routing logic is complex
+
+--> Spring Boot Integration with RabbitMQ
+        Spring Boot provides spring-boot-starter-amqp to simplify RabbitMQ integration.
+        Key Components
+        🔹 RabbitTemplate
+        Used by producer
+        Sends messages to exchange
+        🔹 @RabbitListener
+        Used by consumer
+        Listens to queues automatically
+        🔹 Auto Configuration
+        ConnectionFactory
+        Message converters
+        Listener containers
+
+--> Advanced Tasks
+        JSON Message Handling
+        Use Jackson Message Converter
+        Send Java Objects instead of strings
+
+        Retry & Dead Letter Queue (DLQ)
+        Retry failed messages
+        After retries → move to DLQ
+        Prevents message loss
+
+        Topic & Fanout Use Cases
+        Topic → event-driven microservices
+        Fanout → notifications, logs, analytics
+
+        Microservices Integration Scenario
+        Example Architecture:
+        Order Service → RabbitMQ
+        Inventory Service
+        Payment Service
+        Notification Service
+        Each service reacts independently.

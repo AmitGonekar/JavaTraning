@@ -1,0 +1,136 @@
+
+--> Lazy Loading Optimization
+        What is Lazy Loading?
+        Lazy loading means related entities are not fetched from the database until they are explicitly accessed.
+
+        Example:
+            @OneToMany(fetch = FetchType.LAZY)
+            private List<Order> orders;
+
+        Why Lazy Loading Exists
+        ✅ Reduces initial query size
+        ✅ Improves memory usage
+        ✅ Avoids unnecessary joins
+
+        Performance Issue with Lazy Loading
+        Lazy loading becomes dangerous when:
+        Accessed inside loops
+        Accessed outside transactional context
+        Used in REST APIs without planning
+        This leads to:
+        Multiple SQL queries
+        Increased DB round trips
+        Slower response time
+
+        Common Symptoms
+        Logs show many repeated SELECT statements
+        Slow API response
+        High DB CPU usage
+
+--> N+1 Query Problem
+        What is the N+1 Problem?
+        Occurs when:
+        1 query fetches parent entities
+        N additional queries fetch child entities
+
+        Example:
+            List<Customer> customers = customerRepo.findAll();
+            for(Customer c : customers) {
+                c.getAddresses();
+            }
+
+        Result:
+        1 query → customers
+        N queries → addresses for each customer
+
+        Why It Happens
+        Default LAZY loading
+        ORM unaware of future access
+        Poor query planning
+
+--> Database Indexing
+        What is an Index?
+        An index is a data structure (usually B-Tree) that speeds up data retrieval.
+        Without index → Full table scan
+        With index → Direct data access
+
+        Why Indexing Improves Performance
+        ✔ Faster SELECT queries
+        ✔ Faster WHERE, JOIN, ORDER BY
+        ✔ Efficient search operations
+
+        Types of Indexes
+        🔹 Single Column Index
+        🔹 Composite Index
+        🔹 Unique Index
+
+        Trade-offs of Indexing
+        ⚠ Slows down INSERT, UPDATE, DELETE
+        ⚠ Extra disk usage
+
+--> Query Optimization
+        Why Query Optimization Matters
+        Poor queries cause:
+        High latency
+        High memory usage
+        DB bottlenecks
+
+        Common Query Mistakes
+        ❌ SELECT *
+        ❌ Fetching entire entities when only few fields needed
+        ❌ No pagination
+        ❌ Unnecessary joins
+
+--> Connection Pooling – HikariCP
+        What is Connection Pooling?
+        Instead of creating a DB connection per request:
+        Connections are reused
+        Stored in a pool
+
+        Why Connection Pooling is Critical
+        Creating DB connections is:
+        ❌ Expensive
+        ❌ Slow
+        ❌ Resource heavy
+
+        Pooling gives:
+        ✔ Faster response
+        ✔ Controlled DB usage
+        ✔ Better concurrency
+
+        HikariCP Overview
+        Default pool in Spring Boot
+        Lightweight and very fast
+        Low latency under high load
+
+        Important HikariCP Properties
+        | Property            | Purpose                  |
+        | ------------------- | ------------------------ |
+        | `maximumPoolSize`   | Max active connections   |
+        | `minimumIdle`       | Minimum idle connections |
+        | `connectionTimeout` | Max wait for connection  |
+        | `idleTimeout`       | Close unused connections |
+
+
+
+        Performance Issues Due to Poor Pooling
+        ❌ Thread blocking
+        ❌ DB connection exhaustion
+        ❌ Request timeouts
+
+        Advanced Performance Concepts
+        SQL Logging
+        Helps detect:
+        N+1 queries
+        Unnecessary joins
+        Repeated selects
+
+        Micrometer Metrics
+        Used to monitor:
+        DB connections
+        Query latency
+        JVM memory
+        Thread usage
+
+
+
